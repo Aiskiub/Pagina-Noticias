@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="png" href="imagenes/icono.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Noticias de Hoy</h1>
+        <!-- Botón de switch -->
+        <label for="switch" class="switch">
+            <input id="switch" type="checkbox" />
+            <span class="slider"></span>
+            <span class="decoration"></span>
+        </label>
+        <!-- Sección de categorías -->
+        <section class="category-section">
+            <button class="category-button" onclick="filterNews('all')">Todas</button>
+            <button class="category-button" onclick="filterNews('tecnologia')">Tecnología</button>
+            <button class="category-button" onclick="filterNews('salud')">Salud</button>
+            <button class="category-button" onclick="filterNews('entretenimiento')">Entretenimiento</button>
+            <button class="category-button" onclick="filterNews('negocios')">Negocios</button>
+            <button class="category-button" onclick="filterNews('judicial')">Judicial</button>
+        </section>
+    </header>
+
+    <!-- Seccion de noticias -->
+    <section class="news-section">
+        <article class="news-item tecnologia">
+            <img src="imagenes/noticia1.jpg" alt="Un gato llamado Whiskers crea la IA CatGPT">
+            <h3>Un Gato Genio Crea "CatGPT", la Primera IA Felina</h3>
+            <p>En un giro inesperado en el mundo de la inteligencia artificial, un gato llamado Whiskers ha desarrollado el primer modelo de IA pensado exclusivamente para la comprensión y comunicación entre felinos.</p>
+            <button class="read-more" onclick="openModal('modal1')">Leer más</button>
+        </article>
+        <article class="news-item negocios">
+            <img src="imagenes/noticia2.jpg" alt="Gatos empresariales lanzan MeowCorp">
+            <h3>Gatos Empresarios Lanzan la Primera Multinacional Felina "MeowCorp" y Revolucionan el Mundo de los Negocios</h3>
+            <p>Un grupo de gatos ha fundado "MeowCorp", la primera multinacional felina dedicada a satisfacer las necesidades más exquisitas de la población gatuna.</p>
+            <button class="read-more" onclick="openModal('modal2')">Leer más</button>
+        </article>
+        <article class="news-item judicial">
+            <img src="imagenes/noticia3.jpg" alt="Capturan al perro Galletita">
+            <h3>Capturan a "Galletita", el Perro más Peligroso del Mundo, Tras una Persecución Internacional</h3>
+            <p>Las autoridades internacionales han confirmado la captura de "Galletita", un perro conocido por su increíble habilidad para eludir la ley y sembrar el caos en múltiples ciudades.</p>
+            <button class="read-more" onclick="openModal('modal3')">Leer más</button>
+        </article>
+        <article class="news-item salud">
+            <img src="imagenes/noticia4.jpg" alt="Gatos científicos descubren el secreto de las nueve vidas">
+            <h3>Gatos Científicos Descubren el Secreto de las Nueve Vidas, ¡y Sorprenden a la Comunidad Internacional!</h3>
+            <p>En un evento sin precedentes, un grupo de gatos científicos ha revelado lo que podría ser el mayor avance en la historia felina: el secreto detrás de las míticas nueve vidas de los gatos.</p>
+            <button class="read-more" onclick="openModal('modal4')">Leer más</button>
+        </article>
+        <article class="news-item entretenimiento">
+            <img src="imagenes/noticia5.jpg" alt="Los gatos y su nueva tendencia en redes sociales">
+            <h3>Los Gatos y Su Nueva Tendencia en Redes Sociales: ¡Los Influencers Felinos!</h3>
+            <p>Un fenómeno viral ha surgido en internet: gatos que se han convertido en influencers, ganando seguidores por su estilo único y travesuras adorables.</p>
+            <button class="read-more" onclick="openModal('modal5')">Leer más</button>
+        </article>
+        
+        <article class="news-item tecnologia">
+            <img src="imagenes/noticia6.jpg" alt="Nuevas tecnologías para gatos">
+            <h3>Innovaciones Tecnológicas para Gatos: ¡El Futuro Felino Está Aquí!</h3>
+            <p>Los gatos ahora tienen acceso a la última tecnología, desde juguetes interactivos hasta aplicaciones diseñadas para estimular su mente.</p>
+            <button class="read-more" onclick="openModal('modal6')">Leer más</button>
+        </article>
+        
+        <article class="news-item salud">
+            <img src="imagenes/noticia7.jpg" alt="Dieta saludable para gatos">
+            <h3>La Importancia de una Dieta Saludable para Gatos: ¡Consejos de Expertos!</h3>
+            <p>Veterinarios y nutricionistas felinos comparten sus mejores consejos para mantener a los gatos saludables y felices a través de una dieta equilibrada.</p>
+            <button class="read-more" onclick="openModal('modal7')">Leer más</button>
+        </article>
+        
+        <article class="news-item judicial">
+            <img src="imagenes/noticia8.jpg" alt="Los gatos en la corte">
+            <h3>Gatos en la Corte: El Juicio Más Loco de la Historia Felina</h3>
+            <p>Un gato ha llevado a su dueño a la corte por incumplimiento de contrato de comida, desatando un juicio que ha captado la atención de medios internacionales.</p>
+            <button class="read-more" onclick="openModal('modal8')">Leer más</button>
+        </article>
+    </section>
+
+        <!-- Modal -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h3>Un Gato Genio Crea "CatGPT", la Primera IA Felina</h3>
+                <p>En un giro inesperado en el mundo de la inteligencia artificial, un gato llamado Whiskers ha desarrollado el primer modelo de IA pensado exclusivamente para 
+                la comprensión y comunicación entre felinos. Conocido como "CatGPT", el sistema ha dejado atónitos a los expertos en tecnología, quienes afirman que la creación 
+                de Whiskers podría revolucionar la manera en que los gatos se relacionan entre sí y con los humanos.</p>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h3>Gatos Empresarios Lanzan la Primera Multinacional Felina "MeowCorp" y Revolucionan el Mundo de los Negocios</h3>
+                <p>En un sorprendente desarrollo empresarial, un grupo de gatos ha fundado "MeowCorp", la primera multinacional felina dedicada a satisfacer las necesidades más
+                exquisitas de la población gatuna. Con sede en Silicon Valley, la compañía ya ha atraído la atención de inversores de todo el mundo.</p>
+            </div>
+        </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h3>Capturan a "Galletita", el Perro más Peligroso del Mundo, Tras una Persecución Internacional</h3>
+                <p>Las autoridades internacionales han confirmado la captura de "Galletita", un perro conocido por su increíble habilidad para eludir la ley y sembrar 
+                el caos en múltiples ciudades. Tras una intensa persecución que abarcó varios países, el temido can fue finalmente detenido en una operación conjunta entre la 
+                Interpol y fuerzas de seguridad locales.</p>
+            </div>
+        </div>
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <h3>Gatos Científicos Descubren el Secreto de las Nueve Vidas, ¡y Sorprenden a la Comunidad Internacional!</h3>
+                <p>En un evento sin precedentes, un grupo de gatos científicos ha revelado lo que podría ser el mayor avance en la historia felina: el secreto detrás de las 
+                míticas nueve vidas de los gatos. En una conferencia celebrada en el Instituto Internacional de Gato-Ciencia (IIGC), los investigadores felinos presentaron 
+                sus hallazgos a un asombrado público de humanos y otros animales.</p>
+            </div>
+        </div>
+        <div id="modal5" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal5')">&times;</span>
+                <h3>Los Gatos y Su Nueva Tendencia en Redes Sociales: ¡Los Influencers Felinos!</h3>
+                <p>Un fenómeno viral ha surgido en internet: gatos que se han convertido en influencers, ganando seguidores por su estilo único y travesuras adorables. Los gatos han demostrado ser los reyes de las redes sociales, conquistando corazones con su carisma.</p>
+            </div>
+        </div>
+        
+        <div id="modal6" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal6')">&times;</span>
+                <h3>Innovaciones Tecnológicas para Gatos: ¡El Futuro Felino Está Aquí!</h3>
+                <p>Los gatos ahora tienen acceso a la última tecnología, desde juguetes interactivos hasta aplicaciones diseñadas para estimular su mente. Estas innovaciones están mejorando la calidad de vida de los felinos en todo el mundo.</p>
+            </div>
+        </div>
+        
+        <div id="modal7" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal7')">&times;</span>
+                <h3>La Importancia de una Dieta Saludable para Gatos: ¡Consejos de Expertos!</h3>
+                <p>Veterinarios y nutricionistas felinos comparten sus mejores consejos para mantener a los gatos saludables y felices a través de una dieta equilibrada. La nutrición adecuada es esencial para el bienestar de los gatos a lo largo de su vida.</p>
+            </div>
+        </div>
+        
+        <div id="modal8" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal8')">&times;</span>
+                <h3>Gatos en la Corte: El Juicio Más Loco de la Historia Felina</h3>
+                <p>Un gato ha llevado a su dueño a la corte por incumplimiento de contrato de comida, desatando un juicio que ha captado la atención de medios internacionales. Este curioso caso ha generado debates sobre los derechos de los animales en la sociedad moderna.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfil -->
+    <section class="profile">
+        <img src="imagenes/perfil.jpg" alt="Perfil">
+        <div>
+            <h2>Mi Perfil</h2>
+            <p>Hola, soy Daniel. Bienvenido a mi sitio de noticias, aquí encontrarás información relevante y actual 100% real.</p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+<!-- Contacto -->
+<section class="contact">
+    <h1>Contacto</h1>
+    <div class="contact-info">
+        <div>
+            <h3>Correo</h3>
+            <p>danilq139@gmail.com</p>
+        </div>
+        <div>
+            <h3>Redes</h3>
+            <p><a href="https://www.instagram.com/not._.dan1/" target="_blank">@not._.dan1</a></p>
+        </div>
+        <div>
+            <h3>Teléfono</h3>
+            <p>3136758028</p>
+        </div>
+        <div>
+            <h3>Nequi</h3>
+            <p>3136758028</p>
+        </div>
+    </div>
+</section>
+    <script src="js/script.js"></script>
+</body>
+</html>
